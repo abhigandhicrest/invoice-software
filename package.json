@@ -1,0 +1,28 @@
+{
+  "name": "invoice-editor",
+  "private": true,
+  "version": "1.0.0",
+  "description": "MERN Invoice Editor with live preview, MongoDB persistence, and SMTP email",
+  "engines": {
+    "node": ">=18"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,green \"npm run dev -w server\" \"npm run dev -w client\"",
+    "dev:client": "npm run dev -w client",
+    "dev:server": "npm run dev -w server",
+    "test": "npm test -w client && npm test -w server",
+    "test:client": "npm test -w client",
+    "test:server": "npm test -w server",
+    "build": "npm run build -w client",
+    "start": "npm start -w server",
+    "seed": "npm run seed -w server",
+    "lint": "npm run lint -w client && npm run lint -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

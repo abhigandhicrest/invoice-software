@@ -1,0 +1,145 @@
+/* Editor chrome. Print rules live in styles/print.css so they stay isolated. */
+:root {
+  --ink: #1c1917;
+  --muted: #57534e;
+  --paper: #f4efe6;
+  --card: #fffdf8;
+  --line: #d6d0c4;
+  --accent: #1f4d3a;
+  --accent-hover: #16382a;
+  --danger: #9b2c2c;
+  --focus: #1f4d3a;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(31, 77, 58, 0.08), transparent 28%),
+    var(--paper);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+h1,
+h2,
+h3,
+.preview-serif {
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+}
+
+.app-header {
+  background: #fffdf8;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(28, 25, 23, 0.04);
+}
+
+.section-title {
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  margin-bottom: 1rem;
+}
+
+.btn-accent {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #fff;
+}
+
+.btn-outline-accent {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: transparent;
+}
+
+.btn-outline-accent:hover,
+.btn-outline-accent:focus {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.form-control:focus,
+.form-select:focus,
+.btn:focus-visible {
+  box-shadow: none;
+}
+
+.invoice-preview {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(28, 25, 23, 0.08);
+  color: #1c1917;
+}
+
+.preview-wrap {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.invoice-table th,
+.invoice-table td {
+  vertical-align: top;
+}
+
+.mobile-view-toggle .btn {
+  min-width: 6.5rem;
+}
+
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 25, 23, 0.45);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.dialog-panel {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 28rem;
+  width: 100%;
+  padding: 1.25rem 1.4rem;
+  box-shadow: 0 16px 40px rgba(28, 25, 23, 0.2);
+}
+
+.status-banner[role='status'],
+.status-banner[role='alert'] {
+  border-radius: 10px;
+}
+
+@media (max-width: 991.98px) {
+  .layout-edit .invoice-preview-host {
+    display: none;
+  }
+
+  .layout-preview .editor-pane {
+    display: none;
+  }
+}

@@ -1,0 +1,50 @@
+/* Print / Save as PDF: only #invoice-preview is visible (TC-UI-08, TC-UI-09).
+   Hidden custom fields are already omitted from the preview markup (TC-UI-10). */
+@media print {
+  @page {
+    margin: 0.6in;
+  }
+
+  html,
+  body,
+  #root {
+    background: #fff !important;
+    height: auto !important;
+  }
+
+  .no-print,
+  .app-header,
+  .editor-pane,
+  .mobile-view-toggle,
+  .status-banner {
+    display: none !important;
+  }
+
+  .invoice-preview-host {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .invoice-preview {
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .invoice-table tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .preview-totals,
+  .preview-notes,
+  .preview-custom-fields {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
